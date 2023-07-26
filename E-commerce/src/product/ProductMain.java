@@ -8,12 +8,10 @@ public class ProductMain {
 		
 		do {
 			System.out.println("1.Go to See the available products");
-			System.out.println("2.See my cart");
-			System.out.println("3.Conform order");
 			System.out.println("------------------------------------------------");
-			System.out.println("4.Enter new Items to the website(Company empoloyes only)");
-			System.out.println("5.Update product price");
-			System.out.println("6.Delete a product");
+			System.out.println("2.Enter new Items to the website(Company empoloyes only)");
+			System.out.println("3.Update product price");
+			System.out.println("4.Delete a product");
 			System.out.println("Enter choice : ");
 			int choice=sc.nextInt();
 			switch (choice) {
@@ -22,36 +20,11 @@ public class ProductMain {
 			
 				System.out.println("List all the Available products");
 				DBmaintain.ShowTable();
-		
-		
-				int id1=sc.nextInt();
-					
-				CalculateProduct cp=new CalculateProduct();
-				Product_info pie=new Product_info();
-				DBmaintain db=new DBmaintain();
-				
-				pie.setid(id1);
-			
-				
-				long pri=db.GetCal(pie);
-			    pie.setPrice(pri);
-				long kim=pie.getPrice();
-				System.out.println(kim);
-			
-				
-			int id2=sc.nextInt();
-			pie.setid2(id2);
-			long pri2=db.GetCal(pie);
-			pie.setToatlPrice(pri2);
-			long min=pie.getTotalPrice();
-			System.out.println(min);
-
-
 				
 				break;
 			
 				
-			case 4:
+			case 2:
 				
 				System.out.println("Enter the Empolyee password : ");
 				int Euser=sc.nextInt();
@@ -73,7 +46,7 @@ public class ProductMain {
 					System.out.println("Invalid password...");
 				}
 				break;
-			case 5:
+			case 3:
 				System.out.println("Enter the Empolyee password");
 				int Euser1=sc.nextInt();
 				int pw1=2310;
@@ -92,7 +65,7 @@ public class ProductMain {
 					System.out.println("Invalid Password.....");
 				}
 				break;
-			case 6:
+			case 4:
 				System.out.println("Enter the id you want to delete : ");
 				int id=sc.nextInt();
 				DBmaintain.DeletePro(id);

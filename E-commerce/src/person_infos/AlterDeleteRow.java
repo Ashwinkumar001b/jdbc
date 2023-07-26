@@ -38,8 +38,6 @@ public class AlterDeleteRow {
 	public void setNewPhone(String NewPhone) {
 		this.NewPhone=NewPhone;
 
-	
 	}
-	
-	
+
 }

@@ -19,6 +19,7 @@ public class PersonMain {
 			
 			switch(choice) {
 			case 1:
+				//Create person details
 				System.out.print("Enter User Name : ");
 				String name=sc.next();
 				System.out.print("Enter User Gmail : ");
@@ -34,15 +35,18 @@ public class PersonMain {
 				break;
 			
 			case 2:
+				//show all details
 				DBmaintainence.ShowData();
 				break;
 			case 3:
+				//delete user by id
 				System.out.print("Enter the User Id you want to delete : ");
 				int id=sc.nextInt();
 				DBmaintainence.DeleteData(id);
 				System.out.println("Successfully deleted.....");
 				break;
 			case 4:
+				//create a user where you delete
 				System.out.println("Enter the Deleted row Id : ");
 				int Id=sc.nextInt();
 				System.out.print("Enter User Name : ");
@@ -56,16 +60,19 @@ public class PersonMain {
 				ad.setid(Id);
 				ad.setNewname(Newname);
 				ad.setNewGmail(NewGmail);
-				ad.setNewGmail(NewGmail);
+		
 				ad.setNewPhone(NewPhone);
 				System.out.println("Added successfully....");
 				
 				DBmaintainence.AlterData(ad);
+				break;
 			
 			case 5:
+				//search user
 				System.out.print("Enter the Searching id :  ");
 				int Sid=sc.nextInt();
 				DBmaintainence.SearchDate(Sid);
+				break;
 				
 		}
 			

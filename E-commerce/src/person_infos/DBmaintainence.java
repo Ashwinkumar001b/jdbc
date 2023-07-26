@@ -6,7 +6,7 @@ public class DBmaintainence {
 	
 	public static void CreateEmpolyee(Person_infos per)
 	{
-		
+		//insert query
 		try {
 		String query="Insert into personinfo(Person_name,Gmail,phn_num) values(?,?,?)";
 		Connection con=DBconnection.getconnect();
@@ -24,6 +24,7 @@ public class DBmaintainence {
 	}
 	public static void ShowData() {
 		try {
+			//select all query
 		String query="select * from personinfo";
 		Connection con=DBconnection.getconnect();
 		Statement st=con.createStatement();
@@ -45,6 +46,7 @@ public class DBmaintainence {
 	}
 	public static void DeleteData(int id) {
 		try {
+			//delete query
 	
 			String query="delete from personinfo where id="+id;
 			Connection con=DBconnection.getconnect();
@@ -56,6 +58,7 @@ public class DBmaintainence {
 	}
 	public static void AlterData(AlterDeleteRow adr) {
 		try {
+			//insert query where user deleted
 			String query="Insert into personinfo(Id,Person_name,Gmail,phn_num) values(?,?,?,?)";
 			Connection con=DBconnection.getconnect();
 			PreparedStatement pst=con.prepareStatement(query);
@@ -72,6 +75,7 @@ public class DBmaintainence {
 	}
 	public static void SearchDate(int id){
 		try {
+			//search by id query
 			String query="select * from personinfo where id = "+id;
 			Connection con=DBconnection.getconnect();
 			Statement st=con.createStatement();
@@ -88,18 +92,7 @@ public class DBmaintainence {
 			ex.printStackTrace();
 		}
 	}
-	public static int GetCal(int id) {
-		try {
-		String query="select * from personinfo where id = "+id;
-		Connection con=DBconnection.getconnect();
-		Statement st=con.createStatement();
-		ResultSet rs=st.executeQuery(query);
-		System.out.println(rs.getInt(id));
-		}catch(Exception ex) {
-			ex.printStackTrace();
-		}
-		return id;
-		
+	
 	}
 
-}
+
